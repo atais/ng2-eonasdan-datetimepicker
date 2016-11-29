@@ -69,7 +69,7 @@ Option #2
 
 
 In both cases the directive will work exactly the same. Also triggering the callendar with the icon in `span` will work in both cases. 
-**This comes from angular1 version and may be deleted in the future.* 
+**This comes from angular1 version and may be deleted in the future.**
 
 ## Parameters
 
