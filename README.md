@@ -27,6 +27,12 @@ export class SomeModule {}
 
 3) Start using!
 
+## Examples
+
+* Simple example, with one datetimepicker: http://embed.plnkr.co/bUVVQu/
+
+*I would appreciate any help with making the demo better. I do not know SystemJS well. Comments in code or disabled elements show features I have not managed to port from Angular 1 demos. Thanks*
+
 ## Directive usage
 
 Add `a2e-datetimepicker` tag and add the `date` attribute. 
