@@ -115,4 +115,4 @@ import 'eonasdan-bootstrap-datetimepicker';
 
 to your `vendor.ts` file.
 
-## [License](https://github.com/atais/angular-eonasdan-datetimepicker/blob/master/LICENSE)
+## [License](https://github.com/atais/ng2-eonasdan-datetimepicker/blob/master/LICENSE)
