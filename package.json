@@ -1,6 +1,6 @@
 {
   "name": "ng2-eonasdan-datetimepicker",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Angular2 component for bootstrap-datetimepicker library.",
   "keywords": [
     "angular2",
@@ -12,8 +12,8 @@
   ],
   "homepage": "https://github.com/atais/ng2-eonasdan-datetimepicker",
   "license": "MIT",
-  "main": "dist/datetimepicker.directive.js",
-  "typings": "dist/datetimepicker.directive.d.ts",
+  "main": "dist/datetimepicker.module.js",
+  "typings": "dist/datetimepicker.module.d.ts",
   "scripts": {
     "pretest": "npm run build",
     "build": "rm -rf dist && tsc",
