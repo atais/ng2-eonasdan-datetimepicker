@@ -13,13 +13,14 @@ Please, post an issue on GitHub and **provide a plunker** with your question.
 npm install ng2-eonasdan-datetimepicker --save
 ```
 
-2) Add the `DateTimePickerDirective` directive in the module:
+2) Add the A2Edatetimepicker module import in your module.:
+
 ```javascript
-import {DateTimePickerDirective} from 'ng2-eonasdan-datetimepicker';
+import {A2Edatetimepicker} from 'ng2-eonasdan-datetimepicker';
 
 @NgModule({
-  declarations: [...
-    DateTimePickerDirective
+  imports: [
+    A2Edatetimepicker
   ]
 })
 export class SomeModule {}
