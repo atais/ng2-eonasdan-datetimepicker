@@ -36,7 +36,7 @@ export class DateTimePickerDirective implements OnInit, OnChanges {
         this.dpElement.data('DateTimePicker').date(this.date);
 
         this.dpElement.on('dp.change', (e) => {
-            if (e.date.valueOf() !== this.date.valueOf()) {
+            if (e.date && e.date.valueOf() !== this.date.valueOf()) {
                 this.date = e.date;
                 this.onChange.emit(e.date);
             }
