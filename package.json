@@ -16,7 +16,7 @@
   "typings": "dist/datetimepicker.module.d.ts",
   "scripts": {
     "pretest": "npm run build",
-    "build": "rm -rf dist && tsc",
+    "build": "del /f dist && tsc", // change this to rm -rf for linux machines
     "prepublish": "npm run build"
   },
   "author": "Michał Siatkowski",
@@ -25,22 +25,23 @@
     "url": "https://github.com/atais/ng2-eonasdan-datetimepicker.git"
   },
   "devDependencies": {
-    "@types/core-js": "^0.9.34",
-    "ts-loader": "^1.2.2",
-    "typescript": "^2.0.10",
+    "@types/core-js": "^0.9.36",
+    "ts-loader": "^2.0.1",
+    "typescript": "^2.1.6",
     "zone.js": "^0.7.2"
   },
   "dependencies": {
-    "@angular/common": "^2.0.0",
-    "@angular/compiler": "^2.0.0",
-    "@angular/core": "^2.0.0",
-    "@angular/platform-browser": "^2.0.0",
-    "@angular/platform-browser-dynamic": "^2.0.0",
-    "bootstrap": "*",
+    "@angular/common": "^2.4.4",
+    "@angular/compiler": "^2.4.4",
+    "@angular/core": "^2.4.4",
+    "@angular/platform-browser": "^2.4.4",
+    "@angular/platform-browser-dynamic": "^2.4.4",
+    "bootstrap": "~3.3.6",
     "eonasdan-bootstrap-datetimepicker": ">=4.17.22 <5.0.0",
     "@types/eonasdan-bootstrap-datetimepicker": "^4.17.22",
-    "@types/jquery": "^2.0.34",
-    "moment": ">=2.14.0",
-    "jquery": "~2"
+    "@types/jquery": "^2.0.33",
+    "moment": "~2.15.0",
+    "jquery": "~2.2.3",
+    "rxjs":"^5.0.1"
   }
 }
