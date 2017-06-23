@@ -16,7 +16,7 @@
   "typings": "dist/datetimepicker.module.d.ts",
   "scripts": {
     "pretest": "npm run build",
-    "build": "del /f dist && tsc", // change this to rm -rf for linux machines
+    "build": "del /f dist && tsc",
     "prepublish": "npm run build"
   },
   "author": "Michał Siatkowski",
