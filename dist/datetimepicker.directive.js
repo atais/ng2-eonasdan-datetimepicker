@@ -8,65 +8,65 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var $ = require('jquery');
-var moment = require('moment');
-var DateTimePickerDirective = (function () {
-    function DateTimePickerDirective(el, renderer) {
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = require("@angular/core");
+const $ = require("jquery");
+const moment = require("moment");
+let DateTimePickerDirective = class DateTimePickerDirective {
+    constructor(el, renderer) {
         this.onChange = new core_1.EventEmitter();
         this.onClick = new core_1.EventEmitter();
-        var $parent = $(el.nativeElement.parentNode);
+        let $parent = $(el.nativeElement.parentNode);
         this.dpElement = $parent.hasClass('input-group') ? $parent : $(el.nativeElement);
     }
-    DateTimePickerDirective.prototype.ngOnInit = function () {
-        var _this = this;
+    ngOnInit() {
         this.dpElement.datetimepicker(this.options);
         this.dpElement.data('DateTimePicker').date(this.date);
-        this.dpElement.on('dp.change', function (e) {
-            if (e.date.valueOf() !== _this.date.valueOf()) {
-                _this.date = e.date;
-                _this.onChange.emit(e.date);
+        this.dpElement.on('dp.change', (e) => {
+            if (e.date !== this.date) {
+                this.date = e.date;
+                this.onChange.emit(e.date);
             }
         });
-        this.dpElement.on('click', function () { return _this.onClick.emit(); });
-    };
-    DateTimePickerDirective.prototype.ngOnChanges = function (changes) {
-        var dpe = this.dpElement.data('DateTimePicker');
+        this.dpElement.on('click', () => this.onClick.emit());
+    }
+    ngOnChanges(changes) {
+        let dpe = this.dpElement.data('DateTimePicker');
         if (!!dpe) {
-            var options = changes['options'];
-            var date = changes['date'];
-            if (!!options) {
-                $.map(options.currentValue, function (value, key) {
+            if (changes.options) {
+                $.map(changes.options.currentValue, (value, key) => {
                     dpe[key](value);
                 });
             }
-            if (!!date) {
-                dpe.date(date.currentValue);
+            if (changes.date && changes.date.currentValue !== undefined) {
+                dpe.date(changes.date.currentValue);
+            }
+            else {
+                dpe.date(null);
             }
         }
-    };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], DateTimePickerDirective.prototype, "date", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], DateTimePickerDirective.prototype, "options", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], DateTimePickerDirective.prototype, "onChange", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], DateTimePickerDirective.prototype, "onClick", void 0);
-    DateTimePickerDirective = __decorate([
-        core_1.Directive({
-            selector: '[a2e-datetimepicker]'
-        }), 
-        __metadata('design:paramtypes', [core_1.ElementRef, core_1.Renderer])
-    ], DateTimePickerDirective);
-    return DateTimePickerDirective;
-}());
+    }
+};
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], DateTimePickerDirective.prototype, "date", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], DateTimePickerDirective.prototype, "options", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], DateTimePickerDirective.prototype, "onChange", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], DateTimePickerDirective.prototype, "onClick", void 0);
+DateTimePickerDirective = __decorate([
+    core_1.Directive({
+        selector: '[a2e-datetimepicker]'
+    }),
+    __metadata("design:paramtypes", [core_1.ElementRef, core_1.Renderer])
+], DateTimePickerDirective);
 exports.DateTimePickerDirective = DateTimePickerDirective;
