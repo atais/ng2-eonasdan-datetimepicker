@@ -1,6 +1,6 @@
 {
   "name": "ng2-eonasdan-datetimepicker",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Angular2 component for bootstrap-datetimepicker library.",
   "keywords": [
     "angular2",
@@ -15,9 +15,8 @@
   "main": "dist/datetimepicker.module.js",
   "typings": "dist/datetimepicker.module.d.ts",
   "scripts": {
-    "pretest": "npm run build",
-    "build": "(del /f dist || rm -rf dist) && tsc",
-    "prepublish": "npm run build"
+    "prepare": "npm run build",
+    "build": "(del /f dist || rm -rf dist) && tsc"
   },
   "author": "Michał Siatkowski",
   "repository": {
@@ -43,6 +42,6 @@
     "moment": "^2.10",
     "moment-timezone": "^0.4.0",
     "jquery": "^1.8.3 || ^2.0",
-    "rxjs":"^5.0.1"
+    "rxjs": "^5.0.1"
   }
 }
