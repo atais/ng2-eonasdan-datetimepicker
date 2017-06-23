@@ -36,7 +36,7 @@ export class DateTimePickerDirective implements OnInit, OnChanges {
         this.dpElement.data('DateTimePicker').date(this.date);
 
         this.dpElement.on('dp.change', (e) => {
-            if (e.date && e.date.valueOf() !== this.date.valueOf()) {
+            if (e.date !== this.date) {
                 this.date = e.date;
                 this.onChange.emit(e.date);
             }
@@ -49,17 +49,16 @@ export class DateTimePickerDirective implements OnInit, OnChanges {
         let dpe = this.dpElement.data('DateTimePicker');
 
         if (!!dpe) {
-            let options = changes['options'];
-            let date = changes['date'];
-
-            if (!!options) {
-                $.map(options.currentValue, (value, key) => {
+            if (changes.options) {
+                $.map(changes.options.currentValue, (value, key) => {
                     dpe[key](value);
                 });
             }
 
-            if (!!date) {
-                dpe.date(date.currentValue);
+            if (changes.date && changes.date.currentValue !== undefined) {
+                dpe.date(changes.date.currentValue);
+            } else {
+                dpe.date(null);
             }
         }
     }
