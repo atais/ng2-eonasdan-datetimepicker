@@ -47,28 +47,28 @@ var DateTimePickerDirective = (function () {
             }
         }
     };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], DateTimePickerDirective.prototype, "date", void 0);
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Object)
+    ], DateTimePickerDirective.prototype, "options", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], DateTimePickerDirective.prototype, "onChange", void 0);
+    __decorate([
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
+    ], DateTimePickerDirective.prototype, "onClick", void 0);
+    DateTimePickerDirective = __decorate([
+        core_1.Directive({
+            selector: '[a2e-datetimepicker]'
+        }),
+        __metadata("design:paramtypes", [core_1.ElementRef, core_1.Renderer])
+    ], DateTimePickerDirective);
     return DateTimePickerDirective;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], DateTimePickerDirective.prototype, "date", void 0);
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Object)
-], DateTimePickerDirective.prototype, "options", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", core_1.EventEmitter)
-], DateTimePickerDirective.prototype, "onChange", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", core_1.EventEmitter)
-], DateTimePickerDirective.prototype, "onClick", void 0);
-DateTimePickerDirective = __decorate([
-    core_1.Directive({
-        selector: '[a2e-datetimepicker]'
-    }),
-    __metadata("design:paramtypes", [core_1.ElementRef, core_1.Renderer])
-], DateTimePickerDirective);
 exports.DateTimePickerDirective = DateTimePickerDirective;

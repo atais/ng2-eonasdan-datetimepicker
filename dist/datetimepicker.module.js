@@ -12,17 +12,17 @@ var datetimepicker_directive_1 = require("./datetimepicker.directive");
 var A2Edatetimepicker = (function () {
     function A2Edatetimepicker() {
     }
+    A2Edatetimepicker = __decorate([
+        core_1.NgModule({
+            imports: [
+                platform_browser_1.BrowserModule,
+            ],
+            declarations: [
+                datetimepicker_directive_1.DateTimePickerDirective
+            ],
+            exports: [datetimepicker_directive_1.DateTimePickerDirective]
+        })
+    ], A2Edatetimepicker);
     return A2Edatetimepicker;
 }());
-A2Edatetimepicker = __decorate([
-    core_1.NgModule({
-        imports: [
-            platform_browser_1.BrowserModule,
-        ],
-        declarations: [
-            datetimepicker_directive_1.DateTimePickerDirective
-        ],
-        exports: [datetimepicker_directive_1.DateTimePickerDirective]
-    })
-], A2Edatetimepicker);
 exports.A2Edatetimepicker = A2Edatetimepicker;
