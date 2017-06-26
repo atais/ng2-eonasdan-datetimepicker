@@ -9,32 +9,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const core_1 = require("@angular/core");
-const $ = require("jquery");
-const moment = require("moment");
-let DateTimePickerDirective = class DateTimePickerDirective {
-    constructor(el, renderer) {
+var core_1 = require("@angular/core");
+var $ = require("jquery");
+var moment = require("moment");
+var DateTimePickerDirective = (function () {
+    function DateTimePickerDirective(el, renderer) {
         this.onChange = new core_1.EventEmitter();
         this.onClick = new core_1.EventEmitter();
-        let $parent = $(el.nativeElement.parentNode);
+        var $parent = $(el.nativeElement.parentNode);
         this.dpElement = $parent.hasClass('input-group') ? $parent : $(el.nativeElement);
     }
-    ngOnInit() {
+    DateTimePickerDirective.prototype.ngOnInit = function () {
+        var _this = this;
         this.dpElement.datetimepicker(this.options);
         this.dpElement.data('DateTimePicker').date(this.date);
-        this.dpElement.on('dp.change', (e) => {
-            if (e.date !== this.date) {
-                this.date = e.date;
-                this.onChange.emit(e.date);
+        this.dpElement.on('dp.change', function (e) {
+            if (e.date !== _this.date) {
+                _this.date = e.date;
+                _this.onChange.emit(e.date);
             }
         });
-        this.dpElement.on('click', () => this.onClick.emit());
-    }
-    ngOnChanges(changes) {
-        let dpe = this.dpElement.data('DateTimePicker');
+        this.dpElement.on('click', function () { return _this.onClick.emit(); });
+    };
+    DateTimePickerDirective.prototype.ngOnChanges = function (changes) {
+        var dpe = this.dpElement.data('DateTimePicker');
         if (!!dpe) {
             if (changes.options) {
-                $.map(changes.options.currentValue, (value, key) => {
+                $.map(changes.options.currentValue, function (value, key) {
                     dpe[key](value);
                 });
             }
@@ -45,8 +46,9 @@ let DateTimePickerDirective = class DateTimePickerDirective {
                 dpe.date(null);
             }
         }
-    }
-};
+    };
+    return DateTimePickerDirective;
+}());
 __decorate([
     core_1.Input(),
     __metadata("design:type", Object)
