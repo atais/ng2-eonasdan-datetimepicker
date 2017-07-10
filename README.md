@@ -30,9 +30,13 @@ export class SomeModule {}
 
 ## Examples
 
-* Simple example, with one datetimepicker: http://embed.plnkr.co/bUVVQu/
+* Simple example, with one datetimepicker: https://embed.plnkr.co/vnU3TedIRqOFGXWRbXt0/
 
-*I would appreciate any help with making the demo better. I do not know SystemJS well. Comments in code or disabled elements show features I have not managed to port from Angular 1 demos. Thanks*
+*I would appreciate any help with providing the demos of this library. Detailed information: https://github.com/atais/ng2-eonasdan-datetimepicker/issues/3*
+* Example with two, linked datetimepickers: WIP
+* Validation example: WIP
+* From/To validation example: WIP
+
 
 ## Directive usage
 
