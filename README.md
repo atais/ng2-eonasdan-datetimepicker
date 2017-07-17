@@ -1,4 +1,4 @@
-# ng2-eonasdan-datetimepicker
+# ng4-eonasdan-datetimepicker-hirwan
 
 * A wrapper directive around the [bootstrap-datetimepicker component](http://eonasdan.github.io/bootstrap-datetimepicker/).
 * It is a continuation of [angular-eonasdan-datetimepicker](https://github.com/atais/angular-eonasdan-datetimepicker).
