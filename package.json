@@ -1,6 +1,6 @@
 {
   "name": "ng2-eonasdan-datetimepicker",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Angular2 component for bootstrap-datetimepicker library.",
   "keywords": [
     "angular2",
@@ -27,14 +27,14 @@
     "@types/core-js": "^0.9.36",
     "ts-loader": "^2.0.1",
     "typescript": "^2.1.6",
-    "zone.js": "^0.7.2"
+    "zone.js": ">=0.7.2"
   },
   "dependencies": {
-    "@angular/common": "^2.0.0",
-    "@angular/compiler": "^2.0.0",
-    "@angular/core": "^2.0.0",
-    "@angular/platform-browser": "^2.0.0",
-    "@angular/platform-browser-dynamic": "^2.0.0",
+    "@angular/common": ">=2.0.0",
+    "@angular/compiler": ">=2.0.0",
+    "@angular/core": ">=2.0.0",
+    "@angular/platform-browser": ">=2.0.0",
+    "@angular/platform-browser-dynamic": ">=2.0.0",
     "bootstrap": "^3.3",
     "eonasdan-bootstrap-datetimepicker": ">=4.17.22 <5.0.0",
     "@types/eonasdan-bootstrap-datetimepicker": "^4.17.22",
