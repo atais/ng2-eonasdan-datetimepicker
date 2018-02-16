@@ -33,13 +33,6 @@
     "@angular/core": "4.0.2",
     "@angular/platform-browser": "4.0.2",
     "@angular/platform-browser-dynamic": "4.0.2",
-    "bootstrap": "^3.3",
-    "eonasdan-bootstrap-datetimepicker": ">=4.17.22 <5.0.0",
-    "@types/eonasdan-bootstrap-datetimepicker": "^4.17.22",
-    "@types/jquery": "^2.0.33",
-    "moment": "^2.10",
-    "moment-timezone": "^0.4.0",
-    "jquery": "^1.8.3 || ^2.0",
     "rxjs": "^5.0.3",
     "zone.js": ">=0.8.5"
   },
