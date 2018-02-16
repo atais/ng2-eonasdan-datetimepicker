@@ -1,10 +1,10 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {DateTimePickerDirective} from './datetimepicker.directive';
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { DateTimePickerDirective } from './datetimepicker.directive';
 
 @NgModule({
     imports: [
-        BrowserModule,
+        CommonModule
     ],
     declarations: [
         DateTimePickerDirective
