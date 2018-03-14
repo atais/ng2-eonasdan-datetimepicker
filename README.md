@@ -15,7 +15,7 @@ npm install ng2-eonasdan-datetimepicker --save
 2) Include all required scripts if it doesn't included yet in your project:
  - jquery.js, 
  - bootstrap (.js & .css),
- - eonasdan bootsrap datetimepicker,
+ - eonasdan bootsrap datetimepicker (.js & .css),
  
  - moment.js.
 
@@ -27,7 +27,8 @@ npm install ng2-eonasdan-datetimepicker --save
     ```json 
     "styles": [
         "styles.css",
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
