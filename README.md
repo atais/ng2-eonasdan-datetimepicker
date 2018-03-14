@@ -12,8 +12,35 @@ Please, post an issue on GitHub and **provide a plunker** with your question.
 ```javascript
 npm install ng2-eonasdan-datetimepicker --save
 ```
+2) Include all required scripts if it doesn't included yet in your project:
+ - jquery.js, 
+ - bootstrap (.js & .css),
+ - eonasdan bootsrap datetimepicker,
+ 
+ - moment.js.
 
-2) Add the A2Edatetimepicker module import in your module.:
+   (nb: you don't need to do another npm install, the previous command already did it)
+
+    an example by using angular cli, you can add theses libs in scripts and styles keys in  **.angular-cli.json**
+
+
+    ```json 
+    "styles": [
+        "styles.css",
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+      ],
+      "scripts": [
+        "../node_modules/jquery/dist/jquery.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
+        "../node_modules/moment/min/moment.min.js",
+        "../node_modules/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"
+      ],
+    ```
+
+
+
+
+3) Add the A2Edatetimepicker module import in your module.:
 
 ```javascript
 import {A2Edatetimepicker} from 'ng2-eonasdan-datetimepicker';
@@ -26,7 +53,7 @@ import {A2Edatetimepicker} from 'ng2-eonasdan-datetimepicker';
 export class SomeModule {}
 ```
 
-3) Start using!
+4) Start using!
 
 ## Examples
 
