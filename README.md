@@ -20,7 +20,7 @@ npm install ng2-eonasdan-datetimepicker --save
  - moment.js.
 
    (nb: you don't need to do another npm install, the previous command already did it)
-
+    #### Angular cli:
     an example by using angular cli, you can add theses libs in scripts and styles keys in  **.angular-cli.json**
 
 
@@ -37,6 +37,21 @@ npm install ng2-eonasdan-datetimepicker --save
         "../node_modules/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"
       ],
     ```
+    #### Webpack:
+    another example by using [angular webpack described here](https://angular.io/guide/webpack) : import the librairies  in the **vendor.ts** file
+
+    ```javascript
+    // css files
+    import 'bootstrap/dist/css/bootstrap.min.css';
+    import 'eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css';
+    // js files
+    import * as $ from 'jquery';
+    window['jQuery'] = window['$'] = $;
+    import 'bootstrap/dist/js/bootstrap.min.js';
+    import 'eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js'
+    import * as moment from 'moment';
+
+    ```    
 
 
 
@@ -138,14 +153,5 @@ Detailed description of event: http://eonasdan.github.io/bootstrap-datetimepicke
 
 An `EventEmitter` which gives you information whenever you open or close the datetimepicker.
 
-## Webpack
-
-If you use Webpack it might be required to add
-
-```javascript
-import 'eonasdan-bootstrap-datetimepicker';
-```
-
-to your `vendor.ts` file.
 
 ## [License](https://github.com/atais/ng2-eonasdan-datetimepicker/blob/master/LICENSE)
