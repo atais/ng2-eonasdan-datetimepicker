@@ -33,7 +33,6 @@
     "@angular/platform-browser-dynamic": "4.0.2",
     "@types/core-js": "^0.9.36",
     "@types/eonasdan-bootstrap-datetimepicker": "^4.17.22",
-    "@types/jquery": "^2.0.33",
     "rimraf": "^2.6.1",
     "rxjs": "^5.0.3",
     "ts-loader": "^2.0.1",
