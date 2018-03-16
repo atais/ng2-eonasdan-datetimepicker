@@ -16,7 +16,8 @@
   "typings": "dist/datetimepicker.module.d.ts",
   "scripts": {
     "prepare": "npm run build",
-    "build": "rimraf dist && tsc"
+    "ngc": "./node_modules/.bin/ngc -p tsconfig.json",
+    "build": "rimraf dist && ngc"
   },
   "author": "Michał Siatkowski",
   "repository": {
@@ -24,19 +25,20 @@
     "url": "https://github.com/atais/ng2-eonasdan-datetimepicker.git"
   },
   "devDependencies": {
-    "@types/core-js": "^0.9.36",
-    "rimraf": "^2.6.1",
-    "ts-loader": "^2.0.1",
-    "typescript": "^2.1.6",
     "@angular/common": "4.0.2",
     "@angular/compiler": "4.0.2",
+    "@angular/compiler-cli": "^4.0.2",
     "@angular/core": "4.0.2",
     "@angular/platform-browser": "4.0.2",
     "@angular/platform-browser-dynamic": "4.0.2",
-    "rxjs": "^5.0.3",
-    "zone.js": ">=0.8.5",
+    "@types/core-js": "^0.9.36",
     "@types/eonasdan-bootstrap-datetimepicker": "^4.17.22",
-    "@types/jquery": "^2.0.33"
+    "@types/jquery": "^2.0.33",
+    "rimraf": "^2.6.1",
+    "rxjs": "^5.0.3",
+    "ts-loader": "^2.0.1",
+    "typescript": "^2.1.6",
+    "zone.js": ">=0.8.5"
   },
   "dependencies": {
     "bootstrap": "^3.3",
