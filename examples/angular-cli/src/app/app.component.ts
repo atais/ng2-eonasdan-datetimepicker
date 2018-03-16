@@ -11,7 +11,6 @@ export class AppComponent {
   dateModel = null;
   a2eOptions: any = {
     format: 'DD.MM.YYYY',
-    viewMode: 'years',
     keepOpen: true
   };
   dateToChange(e) {
