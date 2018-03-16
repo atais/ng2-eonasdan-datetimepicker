@@ -8,7 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent { 
     dateTo: any = null;
     dateModel: any = null;
+    a2eOptions = {
+      format: 'MM.DD.YYYY hh:mm A'
+    }
     dateToChange(e: any) {
-      this.dateModel = e.format('MM/DD/YYYY hh:mm A')
+      this.dateModel = e.format('MM.DD.YYYY hh:mm A')
     }
 }
