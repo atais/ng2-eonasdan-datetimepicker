@@ -8,6 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var common_1 = require("@angular/common");
 var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
 var datetimepicker_directive_1 = require("./datetimepicker.directive");
 var A2Edatetimepicker = (function () {
     function A2Edatetimepicker() {
@@ -15,7 +16,8 @@ var A2Edatetimepicker = (function () {
     A2Edatetimepicker = __decorate([
         core_1.NgModule({
             imports: [
-                common_1.CommonModule
+                common_1.CommonModule,
+                forms_1.FormsModule
             ],
             declarations: [
                 datetimepicker_directive_1.DateTimePickerDirective

@@ -10,46 +10,80 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var moment = require("moment");
+var forms_1 = require("@angular/forms");
+var datetimepicker = require("eonasdan-bootstrap-datetimepicker");
 var DateTimePickerDirective = (function () {
-    function DateTimePickerDirective(el, renderer) {
+    function DateTimePickerDirective(changeDetector, el, differs) {
+        this.changeDetector = changeDetector;
+        this.el = el;
+        this.differs = differs;
         this.onChange = new core_1.EventEmitter();
         this.onClick = new core_1.EventEmitter();
+        this.dpinitialized = false;
+        this._onChange = function () {
+        };
         var $parent = $(el.nativeElement.parentNode);
         this.dpElement = $parent.hasClass('input-group') ? $parent : $(el.nativeElement);
     }
+    DateTimePickerDirective_1 = DateTimePickerDirective;
+    DateTimePickerDirective.prototype.setDpValue = function (val) {
+        if (!this.dpinitialized) {
+            return;
+        }
+        if (val) {
+            this.datepicker.date(this.value);
+        }
+        else {
+            this.datepicker.clear();
+        }
+    };
     DateTimePickerDirective.prototype.ngOnInit = function () {
         var _this = this;
+        this.dpinitialized = true;
         this.dpElement.datetimepicker(this.options);
-        this.dpElement.data('DateTimePicker').date(this.date);
+        this.datepicker = this.dpElement.data('DateTimePicker');
+        this.datepicker.date(this.value);
         this.dpElement.on('dp.change', function (e) {
-            if (e.date !== _this.date) {
-                _this.date = e.date;
+            if (e.date !== _this.value) {
+                _this.value = e.date;
                 _this.onChange.emit(e.date);
             }
         });
         this.dpElement.on('click', function () { return _this.onClick.emit(); });
+        this.optionsDiffer = this.differs.find(this.options).create();
     };
-    DateTimePickerDirective.prototype.ngOnChanges = function (changes) {
-        var dpe = this.dpElement.data('DateTimePicker');
-        if (!!dpe) {
-            if (changes.options) {
-                $.map(changes.options.currentValue, function (value, key) {
-                    dpe[key](value);
+    DateTimePickerDirective.prototype.ngDoCheck = function () {
+        var _this = this;
+        if (this.dpinitialized) {
+            var changes = this.optionsDiffer.diff(this.options);
+            if (changes) {
+                $.map(this.options, function (value, key) {
+                    _this.datepicker[key](value);
                 });
-            }
-            if (changes.date && changes.date.currentValue !== undefined) {
-                dpe.date(changes.date.currentValue);
-            }
-            else {
-                dpe.date(null);
             }
         }
     };
-    __decorate([
-        core_1.Input(),
-        __metadata("design:type", Object)
-    ], DateTimePickerDirective.prototype, "date", void 0);
+    DateTimePickerDirective.prototype.writeValue = function (value) {
+        this.value = value;
+        this.setDpValue(value);
+    };
+    Object.defineProperty(DateTimePickerDirective.prototype, "value", {
+        get: function () {
+            return this._value || null;
+        },
+        set: function (val) {
+            this._value = val;
+            this._onChange(val);
+            this.changeDetector.markForCheck();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    DateTimePickerDirective.prototype.registerOnChange = function (fn) {
+        this._onChange = fn;
+    };
+    DateTimePickerDirective.prototype.registerOnTouched = function () {
+    };
     __decorate([
         core_1.Input(),
         __metadata("design:type", Object)
@@ -62,12 +96,18 @@ var DateTimePickerDirective = (function () {
         core_1.Output(),
         __metadata("design:type", core_1.EventEmitter)
     ], DateTimePickerDirective.prototype, "onClick", void 0);
-    DateTimePickerDirective = __decorate([
+    DateTimePickerDirective = DateTimePickerDirective_1 = __decorate([
         core_1.Directive({
-            selector: '[a2e-datetimepicker]'
+            selector: '[a2e-datetimepicker]',
+            providers: [
+                { provide: forms_1.NG_VALUE_ACCESSOR, useExisting: core_1.forwardRef(function () { return DateTimePickerDirective_1; }), multi: true }
+            ]
         }),
-        __metadata("design:paramtypes", [core_1.ElementRef, core_1.Renderer])
+        __metadata("design:paramtypes", [core_1.ChangeDetectorRef,
+            core_1.ElementRef,
+            core_1.KeyValueDiffers])
     ], DateTimePickerDirective);
     return DateTimePickerDirective;
+    var DateTimePickerDirective_1;
 }());
 exports.DateTimePickerDirective = DateTimePickerDirective;
