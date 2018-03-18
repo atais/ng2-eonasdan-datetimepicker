@@ -19,7 +19,7 @@ import {
     Validator
   } from '@angular/forms';
 declare var $: any;
-import * as datetimepicker  from 'eonasdan-bootstrap-datetimepicker';
+import * as datetimepicker from 'eonasdan-bootstrap-datetimepicker';
 import * as moment from 'moment';
 
 @Directive({
@@ -32,8 +32,6 @@ export class DateTimePickerDirective implements OnInit, OnDestroy,DoCheck {
 
     _value: moment.Moment;
     @Input() options: datetimepicker.SetOptions;
-
-    @Output() onChange: EventEmitter<moment.Moment> = new EventEmitter<moment.Moment>();
     @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
     datepicker: datetimepicker.Datetimepicker; 
     private dpinitialized: boolean = false;
@@ -89,7 +87,6 @@ export class DateTimePickerDirective implements OnInit, OnDestroy,DoCheck {
         this.dpElement.on('dp.change', (e) => {
             if (e.date !== this.value) {
                 this.value = e.date;
-                this.onChange.emit(e.date);
             }
         });
 

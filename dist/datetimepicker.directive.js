@@ -17,7 +17,6 @@ var DateTimePickerDirective = (function () {
         this.changeDetector = changeDetector;
         this.el = el;
         this.differs = differs;
-        this.onChange = new core_1.EventEmitter();
         this.onClick = new core_1.EventEmitter();
         this.dpinitialized = false;
         this._onChange = function () {
@@ -26,6 +25,27 @@ var DateTimePickerDirective = (function () {
         this.dpElement = $parent.hasClass('input-group') ? $parent : $(el.nativeElement);
     }
     DateTimePickerDirective_1 = DateTimePickerDirective;
+    Object.defineProperty(DateTimePickerDirective.prototype, "value", {
+        get: function () {
+            return this._value || null;
+        },
+        set: function (val) {
+            this._value = val;
+            this._onChange(val);
+            this.changeDetector.markForCheck();
+        },
+        enumerable: true,
+        configurable: true
+    });
+    DateTimePickerDirective.prototype.writeValue = function (value) {
+        this.value = value;
+        this.setDpValue(value);
+    };
+    DateTimePickerDirective.prototype.registerOnChange = function (fn) {
+        this._onChange = fn;
+    };
+    DateTimePickerDirective.prototype.registerOnTouched = function () {
+    };
     DateTimePickerDirective.prototype.setDpValue = function (val) {
         if (!this.dpinitialized) {
             return;
@@ -46,7 +66,6 @@ var DateTimePickerDirective = (function () {
         this.dpElement.on('dp.change', function (e) {
             if (e.date !== _this.value) {
                 _this.value = e.date;
-                _this.onChange.emit(e.date);
             }
         });
         this.dpElement.on('click', function () { return _this.onClick.emit(); });
@@ -63,35 +82,13 @@ var DateTimePickerDirective = (function () {
             }
         }
     };
-    DateTimePickerDirective.prototype.writeValue = function (value) {
-        this.value = value;
-        this.setDpValue(value);
-    };
-    Object.defineProperty(DateTimePickerDirective.prototype, "value", {
-        get: function () {
-            return this._value || null;
-        },
-        set: function (val) {
-            this._value = val;
-            this._onChange(val);
-            this.changeDetector.markForCheck();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    DateTimePickerDirective.prototype.registerOnChange = function (fn) {
-        this._onChange = fn;
-    };
-    DateTimePickerDirective.prototype.registerOnTouched = function () {
+    DateTimePickerDirective.prototype.ngOnDestroy = function () {
+        this.datepicker.destroy();
     };
     __decorate([
         core_1.Input(),
         __metadata("design:type", Object)
     ], DateTimePickerDirective.prototype, "options", void 0);
-    __decorate([
-        core_1.Output(),
-        __metadata("design:type", core_1.EventEmitter)
-    ], DateTimePickerDirective.prototype, "onChange", void 0);
     __decorate([
         core_1.Output(),
         __metadata("design:type", core_1.EventEmitter)
