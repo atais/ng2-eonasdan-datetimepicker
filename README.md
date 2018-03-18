@@ -50,10 +50,9 @@ Option #1
 <div class="input-group">
   <input class="form-control" 
         a2e-datetimepicker
-        [date]="dateTo"
+        [(ngModel)]="dateTo"
         [options]="a2eOptions"
-        (onChange)="dateToChange($event)"
-        (onClick)="dateClick()"/>
+        (ngModelChange)="dateToChange($event)"/>
   <span class="input-group-addon">
     <span class="glyphicon glyphicon-calendar"></span>
   </span>
@@ -66,9 +65,9 @@ Option #2
 <div class="form-group">
 <div class="input-group"
         a2e-datetimepicker
-        [date]="dateTo"
+        [(ngModel)]="dateTo"
         [options]="a2eOptions"
-        (onChange)="dateToChange($event)"
+        (ngModelChange)="dateToChange($event)"
         (onClick)="dateClick()">
   <input class="form-control"/>
   <span class="input-group-addon">
@@ -99,12 +98,6 @@ options = {
     maxDate: dateTo
 };
 ```
-
-### onChange
-
-An `EventEmitter` providing a new value of date. It is called every time the value of datetimepicker is changed. <br>
-
-Detailed description of event: http://eonasdan.github.io/bootstrap-datetimepicker/Events/#dpchange
 
 ### onClick
 
