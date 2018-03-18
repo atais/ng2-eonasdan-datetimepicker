@@ -5,8 +5,6 @@ import {
     OnInit,
     EventEmitter,
     Output,
-    OnChanges,
-    SimpleChanges,
     forwardRef,
     ChangeDetectorRef,
     KeyValueDiffer,
@@ -14,10 +12,7 @@ import {
     DoCheck,
     OnDestroy
 } from '@angular/core';
-import {
-    AbstractControl, ControlValueAccessor, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors,
-    Validator
-  } from '@angular/forms';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 declare var $: any;
 import * as datetimepicker from 'eonasdan-bootstrap-datetimepicker';
 import * as moment from 'moment';
