@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SimpleDatepickerComponent implements OnInit {
 
-  dateModel: Date = null;
-  options: any = {};
+  dateModel = null;
+  options = {};
 
   constructor() { }
 
