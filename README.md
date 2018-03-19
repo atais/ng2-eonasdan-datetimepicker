@@ -89,8 +89,7 @@ Option #1
   <input class="form-control" 
         a2e-datetimepicker
         [(ngModel)]="dateTo"
-        [options]="a2eOptions"
-        (ngModelChange)="dateToChange($event)"/>
+        [options]="a2eOptions"/>
   <span class="input-group-addon">
     <span class="glyphicon glyphicon-calendar"></span>
   </span>
@@ -105,7 +104,6 @@ Option #2
         a2e-datetimepicker
         [(ngModel)]="dateTo"
         [options]="a2eOptions"
-        (ngModelChange)="dateToChange($event)"
         (onClick)="dateClick()">
   <input class="form-control"/>
   <span class="input-group-addon">
@@ -121,9 +119,6 @@ In both cases the directive will work exactly the same. Also triggering the call
 
 ## Parameters
 
-### date
-
-If `date` is `null` or `undefined`, the initial value will not be set!
 
 ### options
 
