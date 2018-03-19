@@ -7,9 +7,10 @@ import { DateTimePickerDirective } from 'ng2-eonasdan-datetimepicker';
   styleUrls: ['./advanced-datepicker.component.css']
 })
 export class AdvancedDatepickerComponent implements OnInit {
+  dateModel = null;
+  options = {};
   @ViewChild(DateTimePickerDirective) dp: DateTimePickerDirective;
   constructor() { }
-
   ngOnInit() {
   }
 
