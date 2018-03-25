@@ -6,6 +6,7 @@ export declare class DateTimePickerDirective implements OnInit, OnDestroy, DoChe
     protected el: ElementRef;
     private differs;
     _value: moment.Moment;
+    private _options;
     options: datetimepicker.SetOptions;
     onClick: EventEmitter<any>;
     datepicker: datetimepicker.Datetimepicker;

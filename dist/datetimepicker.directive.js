@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
-var datetimepicker = require("eonasdan-bootstrap-datetimepicker");
 var DateTimePickerDirective = (function () {
     function DateTimePickerDirective(changeDetector, el, differs) {
         this.changeDetector = changeDetector;
@@ -25,6 +24,21 @@ var DateTimePickerDirective = (function () {
         this.dpElement = $parent.hasClass('input-group') ? $parent : $(el.nativeElement);
     }
     DateTimePickerDirective_1 = DateTimePickerDirective;
+    Object.defineProperty(DateTimePickerDirective.prototype, "options", {
+        get: function () {
+            return this._options || {};
+        },
+        set: function (value) {
+            if (value !== null) {
+                this._options = value;
+            }
+            else {
+                this._options = {};
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(DateTimePickerDirective.prototype, "value", {
         get: function () {
             return this._value || null;
@@ -87,8 +101,9 @@ var DateTimePickerDirective = (function () {
     };
     __decorate([
         core_1.Input(),
-        __metadata("design:type", Object)
-    ], DateTimePickerDirective.prototype, "options", void 0);
+        __metadata("design:type", Object),
+        __metadata("design:paramtypes", [Object])
+    ], DateTimePickerDirective.prototype, "options", null);
     __decorate([
         core_1.Output(),
         __metadata("design:type", core_1.EventEmitter)

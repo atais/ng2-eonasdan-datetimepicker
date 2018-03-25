@@ -23,10 +23,20 @@ import * as moment from 'moment';
         {provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => DateTimePickerDirective), multi: true}
     ]
 })
-export class DateTimePickerDirective implements OnInit, OnDestroy,DoCheck {
+export class DateTimePickerDirective implements OnInit, OnDestroy, DoCheck {
 
     _value: moment.Moment;
-    @Input() options: datetimepicker.SetOptions;
+    private _options: datetimepicker.SetOptions;
+    @Input() set options(value) {
+      if (value !== null) {
+        this._options = value;
+      } else {
+        this._options = {};
+      }
+    }
+    get options(): datetimepicker.SetOptions {
+        return this._options || {};
+    } 
     @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
     datepicker: datetimepicker.Datetimepicker; 
     private dpinitialized: boolean = false;
