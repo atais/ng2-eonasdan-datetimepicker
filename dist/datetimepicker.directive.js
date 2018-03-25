@@ -16,6 +16,7 @@ var DateTimePickerDirective = (function () {
         this.changeDetector = changeDetector;
         this.el = el;
         this.differs = differs;
+        this._options = {};
         this.onClick = new core_1.EventEmitter();
         this.dpinitialized = false;
         this._onChange = function () {
@@ -26,14 +27,11 @@ var DateTimePickerDirective = (function () {
     DateTimePickerDirective_1 = DateTimePickerDirective;
     Object.defineProperty(DateTimePickerDirective.prototype, "options", {
         get: function () {
-            return this._options || {};
+            return this._options;
         },
         set: function (value) {
             if (value !== null) {
                 this._options = value;
-            }
-            else {
-                this._options = {};
             }
         },
         enumerable: true,

@@ -26,16 +26,14 @@ import * as moment from 'moment';
 export class DateTimePickerDirective implements OnInit, OnDestroy, DoCheck {
 
     _value: moment.Moment;
-    private _options: datetimepicker.SetOptions;
+    private _options: datetimepicker.SetOptions = {};
     @Input() set options(value) {
       if (value !== null) {
         this._options = value;
-      } else {
-        this._options = {};
       }
     }
     get options(): datetimepicker.SetOptions {
-        return this._options || {};
+        return this._options;
     } 
     @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
     datepicker: datetimepicker.Datetimepicker; 
