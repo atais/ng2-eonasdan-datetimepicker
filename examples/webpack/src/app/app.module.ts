@@ -1,17 +1,30 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserModule }  from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { A2Edatetimepicker } from 'ng2-eonasdan-datetimepicker';
+import {A2Edatetimepicker} from 'ng2-eonasdan-datetimepicker';
+import { LinkedDatepickersComponent } from './linked-datepickers/linked-datepickers.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { SimpleDatepickerComponent } from './simple-datepicker/simple-datepicker.component';
+import { AdvancedDatepickerComponent } from './advanced-datepicker/advanced-datepicker.component';
+
 
 @NgModule({
+  declarations: [
+    AppComponent,
+    LinkedDatepickersComponent,
+    ReactiveFormComponent,
+    SimpleDatepickerComponent,
+    AdvancedDatepickerComponent
+  ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     A2Edatetimepicker
   ],
-  declarations: [
-    AppComponent
-  ],
-  bootstrap: [ AppComponent ]
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

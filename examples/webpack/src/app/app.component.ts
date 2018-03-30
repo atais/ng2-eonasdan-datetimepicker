@@ -1,17 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import * as moment from 'moment';
 
 @Component({
-  selector: 'my-app',
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent { 
-    dateTo: any = null;
-    dateModel: any = null;
-    a2eOptions = {
-      format: 'MM.DD.YYYY hh:mm A'
-    }
-    dateToChange(e: any) {
-      this.dateModel = e.format('MM.DD.YYYY hh:mm A')
-    }
+export class AppComponent {
 }

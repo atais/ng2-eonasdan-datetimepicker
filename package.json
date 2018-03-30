@@ -12,8 +12,8 @@
   ],
   "homepage": "https://github.com/atais/ng2-eonasdan-datetimepicker",
   "license": "MIT",
-  "main": "dist/datetimepicker.module.js",
-  "typings": "dist/datetimepicker.module.d.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "prepare": "npm run build",
     "ngc": "./node_modules/.bin/ngc -p tsconfig.json",
@@ -29,6 +29,7 @@
     "@angular/compiler": "4.0.2",
     "@angular/compiler-cli": "^4.0.2",
     "@angular/core": "4.0.2",
+    "@angular/forms": "4.0.2",
     "@angular/platform-browser": "4.0.2",
     "@angular/platform-browser-dynamic": "4.0.2",
     "@types/core-js": "^0.9.36",
