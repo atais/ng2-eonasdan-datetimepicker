@@ -1,6 +1,6 @@
 {
   "name": "ng2-eonasdan-datetimepicker",
-  "version": "0.0.10",
+  "version": "0.1.0",
   "description": "Angular2 component for bootstrap-datetimepicker library.",
   "keywords": [
     "angular2",
