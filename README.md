@@ -2,6 +2,8 @@
 
 * A wrapper directive around the [bootstrap-datetimepicker component](http://eonasdan.github.io/bootstrap-datetimepicker/).
 * It is a continuation of [angular-eonasdan-datetimepicker](https://github.com/atais/angular-eonasdan-datetimepicker).
+* It works with angular 2, angular 4 and angular 5
+
 
 Having problems using the wrapper? <br>
 Please, post an issue on GitHub and **provide a plunker** with your question.
@@ -56,10 +58,14 @@ npm install ng2-eonasdan-datetimepicker --save
 
 ```javascript
 import {A2Edatetimepicker} from 'ng2-eonasdan-datetimepicker';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
-    A2Edatetimepicker
+    ...
+    FormsMoudle,
+    A2Edatetimepicker,
+    ...
   ]
 })
 export class SomeModule {}
@@ -69,11 +75,10 @@ export class SomeModule {}
 
 ## Examples
 
-* Simple example, with one datetimepicker: https://embed.plnkr.co/vnU3TedIRqOFGXWRbXt0/
-* I would appreciate any help with providing the demos of this library. Detailed information: https://github.com/atais/ng2-eonasdan-datetimepicker/issues/3
-* Example with two, linked datetimepickers: WIP
-* Validation example: WIP
-* From/To validation example: WIP
+*  <a href="https://atais.github.io/ng2-eonasdan-datetimepicker/" target="_blank">Live demo</a>
+ * Simple example, with one datetimepicker: <a href="https://embed.plnkr.co/XcVl8BrTWVMR6eqAji7S/" target="_blank">SystemJS (Plunker)</a> | <a href="https://github.com/atais/ng2-eonasdan-datetimepicker/tree/master/examples/angular-cli/src/app/simple-datepicker" target="_blank">Demo code (Angular cli or Webpack)</a>
+* Example with two, linked datetimepickers: <a href="https://run.plnkr.co/preview/cjfj8gqhm0007fill6tel3dg6/" target="_blank">SystemJS (Plunker)</a> | <a href="https://github.com/atais/ng2-eonasdan-datetimepicker/tree/master/examples/angular-cli/src/app/linked-datepickers" target="_blank">Demo code  (Angular cli or Webpack)</a>
+* Example with Reactive form: <a href="https://github.com/atais/ng2-eonasdan-datetimepicker/tree/master/examples/angular-cli/src/app/reactive-form/" target="_blank">Demo code (Angular cli or Webpack)</a>, 
 
 
 ## Directive usage
