@@ -22,6 +22,10 @@ module.exports = function (config) {
     angularCli: {
       environment: 'dev'
     },
+    files: [
+    './node_modules/bootstrap/dist/css/bootstrap.min.css',
+    './node_modules/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
+    ],
     reporters: ['progress', 'kjhtml'],
     port: 9876,
     colors: true,
