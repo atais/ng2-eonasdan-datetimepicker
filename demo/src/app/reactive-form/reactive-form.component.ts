@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-reactive-form',
@@ -12,12 +13,20 @@ export class ReactiveFormComponent implements OnInit {
   endOptions: any = {format: 'DD/MM/YYYY'};
   constructor(fb: FormBuilder ) {
     this.form = fb.group({
-      start: ['', Validators.required ],
-      end: ['', Validators.required ],
+      start: [moment('2015-11-18T00:00Z'), Validators.required ],
+      end: [moment('2015-11-24T00:00Z'), Validators.required ],
     });
   }
 
   ngOnInit() {
+  }
+  startReset() {
+    this.form.controls['start'].reset();
+    this.form.controls['start'].setValue(null);
+  }
+  endReset() {
+    this.form.controls['end'].reset();
+    this.form.controls['end'].setValue(null);
   }
 
 }
