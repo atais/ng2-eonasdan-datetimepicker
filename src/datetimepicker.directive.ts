@@ -90,7 +90,7 @@ export class DateTimePickerDirective implements OnInit, OnDestroy, DoCheck {
 
         this.dpElement.on('dp.change', (e) => {
             if (e.date !== this.value) {
-                this.value = e.date;
+                this.value = e.date || null;
             }
         });
 
