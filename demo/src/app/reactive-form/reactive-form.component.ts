@@ -22,11 +22,9 @@ export class ReactiveFormComponent implements OnInit {
   }
   startReset() {
     this.form.controls['start'].reset();
-    this.form.controls['start'].setValue(null);
   }
   endReset() {
     this.form.controls['end'].reset();
-    this.form.controls['end'].setValue(null);
   }
 
 }
