@@ -15,3 +15,7 @@ install:
 script:
   - npm install
   - npm test
+  - ng build --prod --no-aot --base-href=/ng2-eonasdan-datetimepicker/"
+  
+after_success:
+  - ngh --dir dist --repo=https://GH_TOKEN@github.com/atais/ng2-eonasdan-datetimepicker.git"
