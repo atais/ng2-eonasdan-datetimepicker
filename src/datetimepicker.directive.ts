@@ -34,22 +34,23 @@ export class DateTimePickerDirective implements OnInit, OnDestroy, DoCheck {
     }
     get options(): datetimepicker.SetOptions {
         return this._options;
-    } 
+    }
     @Output() onClick: EventEmitter<any> = new EventEmitter<any>();
-    datepicker: datetimepicker.Datetimepicker; 
-    private dpinitialized: boolean = false;
+    datepicker: datetimepicker.Datetimepicker;
+    private dpinitialized: boolean;
 
     private dpElement;
     private optionsDiffer: KeyValueDiffer<string, any>;
     private _onChange: any = () => {
-    };
+    }
 
     constructor(
         private changeDetector: ChangeDetectorRef,
         protected el: ElementRef,
         private differs: KeyValueDiffers
     ) {
-        let $parent = $(el.nativeElement.parentNode);
+        this.dpinitialized = false;
+        const $parent = $(el.nativeElement.parentNode);
         this.dpElement = $parent.hasClass('input-group') ? $parent : $(el.nativeElement);
     }
     get value() {
@@ -71,7 +72,7 @@ export class DateTimePickerDirective implements OnInit, OnDestroy, DoCheck {
     registerOnTouched() {
     }
 
-    private setDpValue(val: string) {
+    private setDpValue(val) {
         if (!this.dpinitialized) {
             return;
         }
@@ -89,7 +90,7 @@ export class DateTimePickerDirective implements OnInit, OnDestroy, DoCheck {
 
         this.dpElement.on('dp.change', (e) => {
             if (e.date !== this.value) {
-                this.value = e.date;
+                this.value = e.date || null;
             }
         });
 
