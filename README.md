@@ -1,4 +1,4 @@
-# ng2-eonasdan-datetimepicker
+# ng2-eonasdan-datetimepicker [![Build Status](https://travis-ci.org/atais/ng2-eonasdan-datetimepicker.svg?branch=master)](https://travis-ci.org/atais/ng2-eonasdan-datetimepicker) [![npm version](https://badge.fury.io/js/ng2-eonasdan-datetimepicker.svg)](https://badge.fury.io/js/ng2-eonasdan-datetimepicker) 
 
 * A wrapper directive around the [bootstrap-datetimepicker component](http://eonasdan.github.io/bootstrap-datetimepicker/).
 * It is a continuation of [angular-eonasdan-datetimepicker](https://github.com/atais/angular-eonasdan-datetimepicker).
