@@ -24,7 +24,7 @@
     "prepare": "npm run build",
     "ngc": "./node_modules/.bin/ngc -p tsconfig.json",
     "build": "rimraf dist && ngc",
-    "gh-pages": "ng build --prod --no-aot --base-href=\"/ng2-eonasdan-datetimepicker/\" && ngh --dir demo/dist"
+    "gh-pages": "./node_modules/.bin/ng build --prod --no-aot --base-href=\"/ng2-eonasdan-datetimepicker/\" && ngh --dir demo/dist"
   },
   "author": "Michał Siatkowski",
   "contributors": [
