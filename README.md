@@ -76,9 +76,9 @@ export class SomeModule {}
 ## Examples
 
 *  <a href="https://atais.github.io/ng2-eonasdan-datetimepicker/" target="_blank">Live demo</a>
- * Simple example, with one datetimepicker: <a href="https://embed.plnkr.co/XcVl8BrTWVMR6eqAji7S/" target="_blank">SystemJS (Plunker)</a> | <a href="https://github.com/atais/ng2-eonasdan-datetimepicker/tree/master/examples/angular-cli/src/app/simple-datepicker" target="_blank">Demo code (Angular cli or Webpack)</a>
-* Example with two, linked datetimepickers: <a href="https://run.plnkr.co/preview/cjfj8gqhm0007fill6tel3dg6/" target="_blank">SystemJS (Plunker)</a> | <a href="https://github.com/atais/ng2-eonasdan-datetimepicker/tree/master/examples/angular-cli/src/app/linked-datepickers" target="_blank">Demo code  (Angular cli or Webpack)</a>
-* Example with Reactive form: <a href="https://github.com/atais/ng2-eonasdan-datetimepicker/tree/master/examples/angular-cli/src/app/reactive-form/" target="_blank">Demo code (Angular cli or Webpack)</a>, 
+ * Simple example, with one datetimepicker: <a href="https://embed.plnkr.co/XcVl8BrTWVMR6eqAji7S/" target="_blank">SystemJS (Plunker)</a> | <a href="https://github.com/atais/ng2-eonasdan-datetimepicker/tree/master/demo/src/app/simple-datepicker" target="_blank">Demo code (Angular cli or Webpack)</a>
+* Example with two, linked datetimepickers: <a href="https://run.plnkr.co/preview/cjfj8gqhm0007fill6tel3dg6/" target="_blank">SystemJS (Plunker)</a> | <a href="https://github.com/atais/ng2-eonasdan-datetimepicker/tree/master/demo/src/app/linked-datepickers" target="_blank">Demo code  (Angular cli or Webpack)</a>
+* Example with Reactive form: <a href="https://github.com/atais/ng2-eonasdan-datetimepicker/tree/master/demo/src/app/reactive-form/" target="_blank">Demo code (Angular cli or Webpack)</a>, 
 
 
 ## Directive usage
