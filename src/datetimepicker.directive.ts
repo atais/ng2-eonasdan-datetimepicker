@@ -10,7 +10,8 @@ import {
     KeyValueDiffer,
     KeyValueDiffers,
     DoCheck,
-    OnDestroy
+    OnDestroy,
+    HostListener
 } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 declare var $: any;
@@ -41,6 +42,8 @@ export class DateTimePickerDirective implements OnInit, OnDestroy, DoCheck {
 
     private dpElement;
     private optionsDiffer: KeyValueDiffer<string, any>;
+    private _onTouched: any = () => {
+    }
     private _onChange: any = () => {
     }
 
@@ -53,6 +56,11 @@ export class DateTimePickerDirective implements OnInit, OnDestroy, DoCheck {
         const $parent = $(el.nativeElement.parentNode);
         this.dpElement = $parent.hasClass('input-group') ? $parent : $(el.nativeElement);
     }
+
+    @HostListener('blur') onBlur() {
+        this._onTouched();
+    }
+
     get value() {
         return this._value || null;
     }
@@ -60,16 +68,21 @@ export class DateTimePickerDirective implements OnInit, OnDestroy, DoCheck {
     set value(val) {
         this._value = val;
         this._onChange(val);
+        this._onTouched();
         this.changeDetector.markForCheck();
     }
+
     writeValue(value) {
         this.value = value;
         this.setDpValue(value);
     }
+
     registerOnChange(fn) {
         this._onChange = fn;
     }
-    registerOnTouched() {
+
+    registerOnTouched(fn: () => any): void {
+        this._onTouched = fn;
     }
 
     private setDpValue(val) {
@@ -82,6 +95,7 @@ export class DateTimePickerDirective implements OnInit, OnDestroy, DoCheck {
             this.datepicker.clear();
         }
     }
+
     ngOnInit(): void {
         this.dpinitialized = true;
         this.dpElement.datetimepicker(this.options);
@@ -97,6 +111,7 @@ export class DateTimePickerDirective implements OnInit, OnDestroy, DoCheck {
         this.dpElement.on('click', () => this.onClick.emit());
         this.optionsDiffer = this.differs.find(this.options).create();
     }
+
     ngDoCheck() {
         if (this.dpinitialized) {
             const changes = this.optionsDiffer.diff(this.options);
@@ -107,9 +122,9 @@ export class DateTimePickerDirective implements OnInit, OnDestroy, DoCheck {
             }
         }
     }
+
     ngOnDestroy(): void {
         this.datepicker.destroy();
     }
-
 
 }
