@@ -18,9 +18,9 @@ var DateTimePickerDirective = (function () {
         this.differs = differs;
         this._options = {};
         this.onClick = new core_1.EventEmitter();
-        this.dpinitialized = false;
         this._onChange = function () {
         };
+        this.dpinitialized = false;
         var $parent = $(el.nativeElement.parentNode);
         this.dpElement = $parent.hasClass('input-group') ? $parent : $(el.nativeElement);
     }
@@ -77,7 +77,7 @@ var DateTimePickerDirective = (function () {
         this.datepicker.date(this.value);
         this.dpElement.on('dp.change', function (e) {
             if (e.date !== _this.value) {
-                _this.value = e.date;
+                _this.value = e.date || null;
             }
         });
         this.dpElement.on('click', function () { return _this.onClick.emit(); });
