@@ -13,12 +13,14 @@ export declare class DateTimePickerDirective implements OnInit, OnDestroy, DoChe
     private dpinitialized;
     private dpElement;
     private optionsDiffer;
+    private _onTouched;
     private _onChange;
     constructor(changeDetector: ChangeDetectorRef, el: ElementRef, differs: KeyValueDiffers);
+    onBlur(): void;
     value: moment.Moment;
     writeValue(value: any): void;
     registerOnChange(fn: any): void;
-    registerOnTouched(): void;
+    registerOnTouched(fn: () => any): void;
     private setDpValue(val);
     ngOnInit(): void;
     ngDoCheck(): void;

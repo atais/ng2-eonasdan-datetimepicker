@@ -18,6 +18,8 @@ var DateTimePickerDirective = (function () {
         this.differs = differs;
         this._options = {};
         this.onClick = new core_1.EventEmitter();
+        this._onTouched = function () {
+        };
         this._onChange = function () {
         };
         this.dpinitialized = false;
@@ -37,6 +39,9 @@ var DateTimePickerDirective = (function () {
         enumerable: true,
         configurable: true
     });
+    DateTimePickerDirective.prototype.onBlur = function () {
+        this._onTouched();
+    };
     Object.defineProperty(DateTimePickerDirective.prototype, "value", {
         get: function () {
             return this._value || null;
@@ -44,6 +49,7 @@ var DateTimePickerDirective = (function () {
         set: function (val) {
             this._value = val;
             this._onChange(val);
+            this._onTouched();
             this.changeDetector.markForCheck();
         },
         enumerable: true,
@@ -56,7 +62,8 @@ var DateTimePickerDirective = (function () {
     DateTimePickerDirective.prototype.registerOnChange = function (fn) {
         this._onChange = fn;
     };
-    DateTimePickerDirective.prototype.registerOnTouched = function () {
+    DateTimePickerDirective.prototype.registerOnTouched = function (fn) {
+        this._onTouched = fn;
     };
     DateTimePickerDirective.prototype.setDpValue = function (val) {
         if (!this.dpinitialized) {
@@ -106,6 +113,12 @@ var DateTimePickerDirective = (function () {
         core_1.Output(),
         __metadata("design:type", core_1.EventEmitter)
     ], DateTimePickerDirective.prototype, "onClick", void 0);
+    __decorate([
+        core_1.HostListener('blur'),
+        __metadata("design:type", Function),
+        __metadata("design:paramtypes", []),
+        __metadata("design:returntype", void 0)
+    ], DateTimePickerDirective.prototype, "onBlur", null);
     DateTimePickerDirective = DateTimePickerDirective_1 = __decorate([
         core_1.Directive({
             selector: '[a2e-datetimepicker]',
