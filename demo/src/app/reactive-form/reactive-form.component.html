@@ -33,6 +33,8 @@
       <br>
       <strong>Form values:</strong> {{form.value | json}}
       <br>
+      <strong>start date is touched? </strong> {{form.get('start').touched}}
+      <br>
       
       <button class="btn btn-default" (click)="startReset()">Clear start date</button>
       <button class="btn btn-default" (click)="endReset()">Clear end date</button>
