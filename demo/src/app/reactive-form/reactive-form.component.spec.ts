@@ -80,4 +80,21 @@ describe('ReactiveFormComponent', () => {
       expect(component.form.value.end.format(format)).toBe(tomorrow.format(format));
     });
   });
+  it('select start date and start date shoule be touched - reset it and start date should be untouched', () => {
+    fixture.whenStable().then(() => {
+      // open start date input
+      fixture.debugElement.queryAll(By.css(opener))[0].nativeElement.click();
+      fixture.detectChanges();
+      dateTag(yesterday).click();
+      fixture.detectChanges();
+      // start date input is now touched
+      expect(component.form.controls['start'].touched).toBeTruthy();
+      // click on reset
+      const btn = fixture.debugElement.query(By.css('button')).nativeElement;
+      btn.click();
+      fixture.detectChanges();
+      // start date input is now untouched
+      expect(component.form.controls['start'].touched).toBeFalsy();
+    });
+  });
 });
