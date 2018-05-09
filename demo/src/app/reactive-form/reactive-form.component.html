@@ -4,7 +4,7 @@
     <form [formGroup]="form">
       <div class="col-md-6">
         <div class="form-group">
-          <div class="input-group" [ngClass]="{'has-error': form.get('start').errors}">
+          <div class="input-group" [ngClass]="{'has-error': form.get('start').errors && form.get('start').touched}">
             <input class="form-control" 
                   a2e-datetimepicker
                   formControlName="start"
@@ -17,7 +17,7 @@
       </div>
       <div class="col-md-6">
         <div class="form-group">
-          <div class="input-group" [ngClass]="{'has-error': form.get('end').errors}">
+          <div class="input-group" [ngClass]="{'has-error': form.get('end').errors && form.get('end').touched}">
             <input class="form-control" 
                   a2e-datetimepicker
                   formControlName="end"
@@ -38,6 +38,8 @@
       
       <button class="btn btn-default" (click)="startReset()">Clear start date</button>
       <button class="btn btn-default" (click)="endReset()">Clear end date</button>
+      <button class="btn btn-default" (click)="form.disable()">Disable dates</button>
+      <button class="btn btn-default" (click)="form.enable()">Enable dates</button>
     </form>
   </div>
 </div>
