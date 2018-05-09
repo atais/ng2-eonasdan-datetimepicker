@@ -13,8 +13,9 @@ export class ReactiveFormComponent implements OnInit {
   endOptions: any = {format: 'DD/MM/YYYY'};
   constructor(fb: FormBuilder ) {
     this.form = fb.group({
-      start: [moment('2015-11-18T00:00Z'), Validators.required ],
-      end: [moment('2015-11-24T00:00Z'), Validators.required ],
+      start: [moment('2015-11-18T00:00Z'), Validators.required],
+      end: [moment('2015-11-24T00:00Z'), Validators.required],
+      test: ''
     });
   }
 
