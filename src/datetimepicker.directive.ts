@@ -100,6 +100,13 @@ export class DateTimePickerDirective implements OnInit, OnDestroy, DoCheck {
             this.datepicker.clear();
         }
     }
+    setDisabledState(isDisabled: boolean): void {
+        if (isDisabled) {
+            this.datepicker.disable();
+          return;
+        }
+        this.datepicker.enable();
+      }
 
     ngOnInit(): void {
         this.dpinitialized = true;

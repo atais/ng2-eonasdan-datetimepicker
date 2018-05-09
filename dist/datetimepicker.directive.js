@@ -49,13 +49,18 @@ var DateTimePickerDirective = (function () {
         set: function (val) {
             this._value = val;
             this._onChange(val);
-            this._onTouched();
+            if (val) {
+                this._onTouched();
+            }
             this.changeDetector.markForCheck();
         },
         enumerable: true,
         configurable: true
     });
     DateTimePickerDirective.prototype.writeValue = function (value) {
+        if (!value) {
+            this.value = null;
+        }
         this.value = value;
         this.setDpValue(value);
     };
