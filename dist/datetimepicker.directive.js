@@ -81,6 +81,13 @@ var DateTimePickerDirective = (function () {
             this.datepicker.clear();
         }
     };
+    DateTimePickerDirective.prototype.setDisabledState = function (isDisabled) {
+        if (isDisabled) {
+            this.datepicker.disable();
+            return;
+        }
+        this.datepicker.enable();
+    };
     DateTimePickerDirective.prototype.ngOnInit = function () {
         var _this = this;
         this.dpinitialized = true;
