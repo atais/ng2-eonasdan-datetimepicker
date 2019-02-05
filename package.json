@@ -31,9 +31,9 @@
   "author": "Michał Siatkowski",
   "contributors": [
     {
-      "name" : "Fetrarijaona R.",
-      "email" : "fetrarij@gmail.com",
-      "url" : "https://fetrarij.men/"
+      "name": "Fetrarijaona R.",
+      "email": "fetrarij@gmail.com",
+      "url": "https://fetrarij.men/"
     }
   ],
   "repository": {
@@ -93,7 +93,7 @@
     "eonasdan-bootstrap-datetimepicker": ">=4.17.22 <5.0.0",
     "moment": "^2.10",
     "moment-timezone": "^0.4.0",
-    "jquery": "^1.8.3 || ^2.0",
+    "jquery": "^1.8.3 || ^2.0 || ^3.0",
     "@types/jquery": "^2.0.33"
   },
   "peerDependencies": {
