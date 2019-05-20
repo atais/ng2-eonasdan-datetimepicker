@@ -76,10 +76,11 @@ export class DateTimePickerDirective implements OnInit, OnDestroy, DoCheck {
 
     writeValue(value) {
         if (!value) {
-            this.value = null;
+            this._value = null;
+        } else {
+            this._value = value;
         }
-        this.value = value;
-        this.setDpValue(value);
+        this.setDpValue(this._value);
     }
 
     registerOnChange(fn) {
